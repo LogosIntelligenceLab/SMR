@@ -958,10 +958,10 @@ body {
   margin: 0 auto 1.25rem !important;
   color: var(--navy-950) !important;
   font-family: 'Newsreader', serif !important;
-  font-size: clamp(3.1rem, 7vw, 6rem) !important;
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem) !important;
   font-weight: 700 !important;
   letter-spacing: -0.045em;
-  line-height: 0.96 !important;
+  line-height: 1.06 !important;
 }
 
 .publication-title span {
@@ -1066,51 +1066,6 @@ body {
   color: var(--muted);
   font-size: 1rem !important;
   line-height: 1.7;
-}
-
-.metrics-band {
-  padding: 0 1.5rem 4.5rem;
-  background: var(--paper);
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--navy-900);
-  box-shadow: var(--shadow-lg);
-}
-
-.metric-card {
-  min-height: 132px;
-  padding: 1.5rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.13);
-  color: white;
-  text-align: left;
-}
-
-.metric-card:last-child {
-  border-right: 0;
-}
-
-.metric-card strong {
-  display: block;
-  margin-bottom: 0.3rem;
-  color: var(--gold-300);
-  font-family: 'Newsreader', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1;
-}
-
-.metric-card span {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 .hero,
@@ -1373,18 +1328,6 @@ pre {
     white-space: nowrap;
   }
 
-  .metrics-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .metric-card:nth-child(2) {
-    border-right: 0;
-  }
-
-  .metric-card:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  }
-
   .method-detail-grid {
     grid-template-columns: 1fr;
   }
@@ -1416,7 +1359,7 @@ pre {
   }
 
   .publication-title {
-    font-size: clamp(2.5rem, 14vw, 3.8rem) !important;
+    font-size: clamp(1.9rem, 9vw, 2.55rem) !important;
   }
 
   .publication-title br {
@@ -1431,21 +1374,6 @@ pre {
   .publication-links .button {
     width: 100%;
     justify-content: center;
-  }
-
-  .metrics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .metric-card,
-  .metric-card:nth-child(2) {
-    min-height: 0;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  }
-
-  .metric-card:last-child {
-    border-bottom: 0;
   }
 
   .figure-frame--hero {
