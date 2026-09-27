@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SMR learns streaming humanoid motion retargeting from robot-aware human semantics and semantic-conditioned physics experts.">
+  <meta name="author" content="Chun Gu, Juntong Zhang, Jingyu Li, Li Zhang">
+  <meta name="theme-color" content="#071522">
+  <title>SMR: Learning Streaming Motion Retargeting for Humanoids from Human Semantic</title>
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a class="nav-brand" href="#top" aria-label="SMR home"><span class="nav-mark" aria-hidden="true">S</span><span>SMR</span></a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#results">Results</a>
+        <a href="#demos">Demos</a>
+        <a href="#BibTeX">Citation</a>
+      </div>
+    </div>
+  </nav>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">↑</button>
+
+  <main id="main-content">
+    <section class="hero publication-hero" id="top">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <div class="venue-pill">Research manuscript · 2026</div>
+          <p class="hero-kicker">Streaming motion retargeting for humanoids</p>
+          <h1 class="title is-1 publication-title"><span>SMR:</span> Learning Streaming Motion Retargeting for Humanoids from Human Semantic</h1>
+          <p class="hero-deck">Human motion semantics become physically grounded humanoid references, one frame at a time.</p>
+          <p class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://sulvxiangxin.github.io/" target="_blank" rel="noopener noreferrer">Chun Gu</a><sup>1,2</sup>,</span>
+            <span class="author-block">Juntong Zhang<sup>2,3</sup>,</span>
+            <span class="author-block">Jingyu Li<sup>1,2</sup>,</span>
+            <span class="author-block"><a href="https://lzrobots.github.io/" target="_blank" rel="noopener noreferrer">Li Zhang</a><sup>1,2</sup></span>
+          </p>
+          <p class="publication-authors affiliations"><span><sup>1</sup>School of Data Science, Fudan University</span><span><sup>2</sup>Shanghai Innovation Institute</span><span><sup>3</sup>Tongji University</span></p>
+          <div class="publication-links">
+            <span class="link-block"><a class="button is-normal is-rounded is-dark" href="paper.pdf" target="_blank" rel="noopener noreferrer">Paper PDF</a></span>
+            <span class="link-block"><a class="button is-normal is-rounded is-dark" href="#demos">Real-robot captures</a></span>
+            <span class="link-block"><a class="button is-normal is-rounded is-dark" href="#BibTeX">BibTeX</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser" id="overview">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <figure class="figure-frame figure-frame--hero">
+            <img src="static/images/pipeline.jpg" alt="SMR pipeline: human motions are converted to robot-aware semantics, tracked by physics experts, and distilled into a causal retargeter" fetchpriority="high">
+          </figure>
+          <p class="subtitle teaser-caption has-text-centered"><strong>SMR</strong> turns human motion into robot-aware task-space targets. Physics experts execute these targets in simulation; accepted state rollouts train a strictly causal Transformer that generates motion references from current and past human observations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics-band" aria-label="SMR at a glance">
+      <div class="container is-max-desktop">
+        <div class="metrics-grid">
+          <div class="metric-card"><strong>400</strong><span>test motions</span></div>
+          <div class="metric-card"><strong>97.0%</strong><span>simulation completion</span></div>
+          <div class="metric-card"><strong>0.039 m</strong><span>closed-loop MPJPE</span></div>
+          <div class="metric-card"><strong>0.37 ms</strong><span>model step per frame</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper-section paper-section--tinted" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <p class="section-index">01 / Overview</p>
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>Retargeting human motion to humanoids requires preserving motion semantics while accounting for the robot's physical constraints. Kinematic pipelines prescribe a robot trajectory through geometric matching, without establishing whether it can be executed under the robot's dynamics. Prior physics-supervised neural methods train bidirectional full-sequence models on physics-refined kinematic trajectories, remaining tied to prescribed kinematic solutions and requiring noncausal context.</p>
+              <p>We propose <strong>SMR</strong>, a streaming neural motion retargeter learned from semantic-conditioned physics experts. Human motion is converted into robot-aware task-space targets for body landmark positions, orientations, and velocities. Physics experts track these targets directly in simulation under contact, dynamics, and actuator constraints. A single strictly causal Transformer learns from accepted executed state trajectories and generates a robot motion reference using only current and past human observations.</p>
+              <p>In a shared Unitree G1 evaluation with a frozen whole-body controller, SMR improves closed-loop completion and tracking errors over kinematic and physics-refined baselines. We also show qualitative streaming teleoperation on a physical G1.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper-section" id="method">
+      <div class="container is-max-desktop has-text-centered">
+        <p class="section-index">02 / From semantics to references</p>
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <figure class="figure-frame">
+            <img src="static/images/figure3-robot-aware-semantics.jpg" alt="Source human motion, the robot-aware semantic command, and the robot tracking it in simulation" loading="lazy">
+            <figcaption>Human motions are transported into the target robot's task space before expert training.</figcaption>
+          </figure>
+          <div class="method-detail-grid">
+            <div class="method-copy">
+              <p class="section-index">Semantic-conditioned physics experts</p>
+              <h3>Let the robot realize the motion.</h3>
+              <p>Expert policies track semantic task-space targets directly in simulation. Contact, balance, and actuator constraints shape the executed trajectory. Only expert rollouts that pass semantic and physical validity checks become student supervision.</p>
+              <ul class="feature-list">
+                <li><span>01</span> Robot-aware body landmark commands express the human motion task.</li>
+                <li><span>02</span> Accepted simulator state rollouts provide dynamics-grounded labels.</li>
+                <li><span>03</span> A causal student uses current and past human observations, with no future human frames.</li>
+              </ul>
+            </div>
+            <figure class="figure-frame figure-frame--architecture">
+              <img src="static/images/pipeline.jpg" alt="Complete SMR training and deployment pipeline" loading="lazy">
+              <figcaption>The student outputs robot motion references; a downstream whole-body controller executes them.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benchmark-section" id="evaluation">
+      <div class="container is-max-desktop has-text-centered">
+        <p class="section-index section-index--light">03 / Evaluation</p>
+        <h2 class="title is-3">Closed-loop execution on G1</h2>
+        <p class="benchmark-copy">All methods are compared on the same 400 motions in simulation using the same frozen MimicLite whole-body controller. Success means completing a motion without the paper's pelvis-height or projected-gravity failure conditions. Errors include all motions, including failures.</p>
+        <div class="results-table-wrap">
+          <table class="results-table">
+            <caption>Frozen-controller results on 400 test motions</caption>
+            <thead><tr><th scope="col">Reference source</th><th scope="col">Success ↑</th><th scope="col">MPJPE ↓</th><th scope="col">E-MPJPE ↓</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">GMR</th><td>90.0%</td><td>0.060 m</td><td>0.115 m</td></tr>
+              <tr><th scope="row">NMR</th><td>92.0%</td><td>0.057 m</td><td>0.111 m</td></tr>
+              <tr class="is-highlight"><th scope="row">SMR (ours)</th><td>97.0%</td><td>0.039 m</td><td>0.080 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="benchmark-copy">At 50 Hz, the SMR model step takes 0.37 ms per frame, compared with 4.87 ms for the warm-started GMR solve under the reported protocol.</p>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container is-max-desktop">
+        <p class="section-index has-text-centered">04 / Results</p>
+        <h2 class="title is-3 has-text-centered">Qualitative comparisons</h2>
+        <figure class="figure-frame">
+          <img src="static/images/qualitative-comparison.jpg" alt="Selected synchronized human and robot pose comparisons for GMR, NMR, and SMR" loading="lazy">
+          <figcaption>Selected crouching, kneeling, and floor-level motions. The figure complements the quantitative evaluation; these examples are not a separate success-rate estimate.</figcaption>
+        </figure>
+        <div class="visual-grid">
+          <figure class="figure-frame"><img src="static/images/scaling.jpg" alt="SMR data and model scaling curves" loading="lazy"><figcaption>Data and model scaling.</figcaption></figure>
+          <figure class="figure-frame"><img src="static/images/controller-training-curves.jpg" alt="Whole-body controller training curves for different reference sources" loading="lazy"><figcaption>Whole-body controller training on each reference distribution.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-small is-light" id="demos">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <p class="section-index">05 / Physical deployment</p>
+          <h2 class="title is-3">Streaming real-robot captures</h2>
+          <p class="demo-intro">Selected frames from independent G1 teleoperation recordings compare GMR-driven and SMR-driven execution through MimicLite. They show arm motion and kneeling; the paper reports these as qualitative demonstrations.</p>
+          <figure class="figure-frame"><img src="static/images/figure6-sequences.jpg" alt="Four rows of G1 teleoperation frames, with GMR on top and SMR below" loading="lazy"><figcaption>GMR (top two rows) and SMR (bottom two rows), with time progressing from left to right in each row.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <p class="section-index">06 / Citation</p>
+            <div class="bibtex-header"><h2 class="title is-3">BibTeX</h2><button class="button copy-bibtex-btn" type="button" onclick="copyBibTeX()" aria-label="Copy BibTeX citation"><span class="copy-text">Copy</span></button></div>
+            <pre><code id="bibtex-code">@misc{gu2026smr,
+  title  = {SMR: Learning Streaming Motion Retargeting for Humanoids from Human Semantic},
+  author = {Gu, Chun and Zhang, Juntong and Li, Jingyu and Zhang, Li},
+  year   = {2026},
+  note   = {Manuscript}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <p>SMR: Learning Streaming Motion Retargeting for Humanoids from Human Semantic.</p>
+        <p>Page layout adapted from the <a href="https://logosroboticsgroup.github.io/NavOL/" target="_blank" rel="noopener noreferrer">NavOL project page</a> and the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>. Adapted layout is shared under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
