@@ -1,0 +1,124 @@
+{
+  "ppt": "SMR_presentation_v8.pptx",
+  "notes": "PPT embedded sources only; slide crops retained; no retiming. Hardware clips are independent recordings. Demo audio removed.",
+  "videos": [
+    {
+      "file": "simulation-1.mp4",
+      "slide": 6,
+      "ppt_member": "ppt/media/media6.mp4",
+      "crop": {},
+      "source_sha256": "091326e5fbb9bf95a0191ea10620894c9ed15086180c944860656025b4fee7bc",
+      "source_bytes": 2244547,
+      "web_bytes": 305164,
+      "source_video_info": "Duration: 00:00:04.00, start: 0.000000, bitrate: 4489 kb/s\nStream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x960, 4486 kb/s, 10 fps, 10 tbr, 10240 tbn (default)"
+    },
+    {
+      "file": "simulation-2.mp4",
+      "slide": 6,
+      "ppt_member": "ppt/media/media7.mp4",
+      "crop": {},
+      "source_sha256": "9249f609d6d3f03a0047e5a25513e2b4e489f389fd9f7cd656b6125c3b2b3f6c",
+      "source_bytes": 7439116,
+      "web_bytes": 1075904,
+      "source_video_info": "Duration: 00:00:11.90, start: 0.000000, bitrate: 5001 kb/s\nStream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x960, 4999 kb/s, 10 fps, 10 tbr, 10240 tbn (default)"
+    },
+    {
+      "file": "simulation-3.mp4",
+      "slide": 7,
+      "ppt_member": "ppt/media/media10.mp4",
+      "crop": {},
+      "source_sha256": "70ba88d097ccfb3f18b8abd9d0518f1f14905867b2febc9b1ba942232772bf8d",
+      "source_bytes": 8293170,
+      "web_bytes": 968764,
+      "source_video_info": "Duration: 00:00:10.20, start: 0.000000, bitrate: 6504 kb/s\nStream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x960, 6502 kb/s, 10 fps, 10 tbr, 10240 tbn (default)"
+    },
+    {
+      "file": "simulation-4.mp4",
+      "slide": 7,
+      "ppt_member": "ppt/media/media11.mp4",
+      "crop": {},
+      "source_sha256": "0de044d1c791c52b4ea2c362527209b76e4a277083b39efc1dd0ee59e8057e39",
+      "source_bytes": 3331961,
+      "web_bytes": 384601,
+      "source_video_info": "Duration: 00:00:05.60, start: 0.000000, bitrate: 4759 kb/s\nStream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x960, 4757 kb/s, 10 fps, 10 tbr, 10240 tbn (default)"
+    },
+    {
+      "file": "arms-gmr.mp4",
+      "slide": 8,
+      "ppt_member": "ppt/media/media13.mp4",
+      "crop": {
+        "l": "18608",
+        "r": "3906"
+      },
+      "source_sha256": "8a4e9a1695573a3d04161e07651c0e4219bdacef424ca580b51506bca3dfce72",
+      "source_bytes": 4905985,
+      "web_bytes": 700008,
+      "source_video_info": "Duration: 00:00:05.24, start: 0.000000, bitrate: 7497 kb/s\nStream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 7399 kb/s, 30.02 fps, 30 tbr, 600 tbn (default)"
+    },
+    {
+      "file": "arms-smr.mp4",
+      "slide": 8,
+      "ppt_member": "ppt/media/media14.mp4",
+      "crop": {
+        "l": "12816",
+        "r": "2947"
+      },
+      "source_sha256": "4b4c123cb8b48554956f2ab0887857ee7004ad46f49fbd75aa27da8de694c197",
+      "source_bytes": 5310571,
+      "web_bytes": 901547,
+      "source_video_info": "Duration: 00:00:05.68, start: 0.000000, bitrate: 7477 kb/s\nStream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 7338 kb/s, 30.12 fps, 30 tbr, 600 tbn (default)"
+    },
+    {
+      "file": "kneeling-gmr.mp4",
+      "slide": 9,
+      "ppt_member": "ppt/media/media16.mp4",
+      "crop": {
+        "l": "15186",
+        "r": "8924"
+      },
+      "source_sha256": "df81ba3a44ea4bc8b6b2310cf5bf3942cf651ebbf9bae002d33d4d3b753894c4",
+      "source_bytes": 8817262,
+      "web_bytes": 1377671,
+      "source_video_info": "Duration: 00:00:09.63, start: 0.000000, bitrate: 7328 kb/s\nStream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 7273 kb/s, 29.40 fps, 30 tbr, 600 tbn (default)"
+    },
+    {
+      "file": "kneeling-smr.mp4",
+      "slide": 9,
+      "ppt_member": "ppt/media/media17.mp4",
+      "crop": {
+        "l": "15625",
+        "r": "13282"
+      },
+      "source_sha256": "67de6875aac14aa8db8770c8109031cbfb7824e59f1301a4c561dd9c8533d328",
+      "source_bytes": 11404486,
+      "web_bytes": 1713545,
+      "source_video_info": "Duration: 00:00:12.38, start: 0.000000, bitrate: 7368 kb/s\nStream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 7260 kb/s, 29.60 fps, 30 tbr, 600 tbn (default)"
+    },
+    {
+      "file": "bag-gmr.mp4",
+      "slide": 10,
+      "ppt_member": "ppt/media/media19.mp4",
+      "crop": {
+        "l": "15625",
+        "r": "10404"
+      },
+      "source_sha256": "0bc37b43f9ba99804f1f7c0d6be95b7fbe5a7960ca883ea1cba6a1962c494594",
+      "source_bytes": 3767068,
+      "web_bytes": 489803,
+      "source_video_info": "Duration: 00:00:04.46, start: 0.000000, bitrate: 6752 kb/s\nStream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 6652 kb/s, 30.02 fps, 30 tbr, 600 tbn (default)"
+    },
+    {
+      "file": "bag-smr.mp4",
+      "slide": 10,
+      "ppt_member": "ppt/media/media20.MOV",
+      "crop": {
+        "l": "15625",
+        "r": "13360"
+      },
+      "source_sha256": "8c706efa568a8d24da8c7041093b7eb7b7c505bed76c10be26b9a9126f378b9c",
+      "source_bytes": 30272313,
+      "web_bytes": 760741,
+      "source_video_info": "Duration: 00:00:05.33, start: 0.000000, bitrate: 45436 kb/s\nStream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 3840x2160, 44720 kb/s, 30 fps, 30 tbr, 600 tbn (default)"
+    }
+  ]
+}

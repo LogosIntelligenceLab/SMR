@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SMR">
-  <rect width="64" height="64" rx="16" fill="#071522"/>
-  <circle cx="32" cy="32" r="23" fill="#c79523"/>
-  <text x="32" y="43" fill="#071522" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle">S</text>
+  <rect width="64" height="64" rx="14" fill="#2f6df6"/>
+  <g fill="none" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#fff" d="M20 24H12a4 4 0 0 0 0 8h4a4 4 0 0 1 0 8H8"/>
+    <path stroke="#cbdcff" d="M27 40V24l6 9 6-9v16"/>
+    <path stroke="#fff" d="M46 40V24h6a4.5 4.5 0 0 1 0 9h-6m6 0 5 7"/>
+  </g>
 </svg>
