@@ -10,8 +10,8 @@
     <meta name="author" content="Chun Gu, Juntong Zhang, Jingyu Li, Li Zhang" />
     <meta name="theme-color" content="#1a1d23" />
     <title>
-      SMR: Learning Streaming Motion Retargeting for Humanoids from Human
-      Semantic
+      SMR: learning streaming motion retargeting for humanoids from human
+      semantic
     </title>
     <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg?v=2" />
     <link rel="stylesheet" href="static/css/index.css" />
@@ -35,7 +35,7 @@
           <a href="#overview">Overview</a><a href="#abstract">Abstract</a
           ><a href="#method">Method</a><a href="#evaluation">Evaluation</a
           ><a href="#results">Results</a><a href="#simulation">Simulation</a
-          ><a href="#demos">Real Robot</a><a href="#BibTeX">BibTeX</a>
+          ><a href="#demos">Real robot</a><a href="#BibTeX">BibTeX</a>
         </nav>
         <button
           class="nav-toggle"
@@ -54,7 +54,7 @@
         <a href="#overview">Overview</a><a href="#abstract">Abstract</a
         ><a href="#method">Method</a><a href="#evaluation">Evaluation</a
         ><a href="#results">Results</a><a href="#simulation">Simulation</a
-        ><a href="#demos">Real Robot</a><a href="#BibTeX">BibTeX</a>
+        ><a href="#demos">Real robot</a><a href="#BibTeX">BibTeX</a>
       </nav>
     </aside>
 
@@ -87,13 +87,13 @@
           </p>
           <h1 class="hero-title">S<span class="brand-accent">M</span>R</h1>
           <p class="hero-subtitle">
-            Learning Streaming Motion Retargeting<br />for Humanoids from Human
-            Semantic
+            learning streaming motion retargeting<br />for humanoids from human
+            semantic
           </p>
           <div class="badges">
-            <span>Robot-Aware Semantics</span
-            ><span>Physics-Grounded Learning</span
-            ><span>Strictly Causal Inference</span>
+            <span>Robot-aware semantics</span
+            ><span>Physics-grounded learning</span
+            ><span>Strictly causal inference</span>
           </div>
         </div>
         <div class="hero-bottom">
@@ -116,7 +116,7 @@
               data-clip="arms-smr"
               data-label="Upper-body motion"
             >
-              Upper Body
+              Upper body
             </button>
             <button
               type="button"
@@ -132,7 +132,7 @@
               data-clip="bag-smr"
               data-label="Motion with a hand-held bag"
             >
-              With a Bag
+              With a bag
             </button>
           </div>
           <div class="hero-actions">
@@ -158,17 +158,17 @@
       >
         <div class="stats">
           <div class="stat-group">
-            <h2>Closed-Loop Performance</h2>
+            <h2>Closed-loop performance</h2>
             <p><strong>97.0%</strong> motion completion</p>
             <p>400 test motions · Frozen G1 controller · Simulation</p>
           </div>
           <div class="stat-group">
-            <h2>Streaming Inference</h2>
+            <h2>Streaming inference</h2>
             <p><strong>0.37 ms</strong> per model frame</p>
             <p>50 Hz input · Reported model-step timing</p>
           </div>
           <div class="stat-group">
-            <h2>Physics-Grounded Motion</h2>
+            <h2>Physics-grounded motion</h2>
             <p><strong>No future human frames</strong></p>
             <p>Current and past observations → Robot references</p>
           </div>
@@ -179,8 +179,8 @@
           <p class="eyebrow">arXiv preprint</p>
           <h2 class="project-title">S<span class="brand-accent">M</span>R</h2>
           <p class="project-subtitle">
-            Learning Streaming Motion Retargeting for Humanoids from Human
-            Semantic
+            learning streaming motion retargeting for humanoids from human
+            semantic
           </p>
           <p class="is-size-5 publication-authors">
             <span class="author-block"
@@ -242,8 +242,8 @@
             <p class="subtitle teaser-caption has-text-centered">
               <strong>SMR</strong> turns human motion into robot-aware
               task-space targets. Physics experts execute these targets in
-              simulation; accepted state rollouts train a strictly causal
-              Transformer that generates motion references from current and past
+              simulation. Accepted state rollouts train a strictly causal
+              transformer that generates motion references from current and past
               human observations.
             </p>
           </div>
@@ -302,12 +302,17 @@
             <figure class="figure-frame">
               <img
                 src="static/images/figure3-robot-aware-semantics.jpg?v=0c8c28352d"
-                alt="Source human motion, the robot-aware semantic command, and the robot tracking it in simulation"
+                alt="Eight paired source SMPL-H and G1 poses with semantic landmark targets overlaid on G1"
                 loading="lazy"
               />
               <figcaption>
-                Human motions are transported into the target robot's task space
-                before expert training.
+                Qualitative examples of robot-aware semantic tracking across
+                eight motions. Each example pairs a source SMPL-H pose (inset)
+                with the corresponding G1 pose produced by a physics expert in
+                simulation. Colored markers and axes depict the transported
+                landmark targets, while the G1 poses preserve distinctive
+                features of the source postures despite differences in
+                morphology.
               </figcaption>
             </figure>
             <div class="method-detail-grid">
@@ -440,13 +445,16 @@
           <figure class="figure-frame">
             <img
               src="static/images/qualitative-comparison.jpg"
-              alt="Selected synchronized human and robot pose comparisons for GMR, NMR, and SMR"
+              alt="Eight matched human poses and corresponding G1 reference poses from GMR, NMR, and SMR"
               loading="lazy"
             />
             <figcaption>
-              Selected crouching, kneeling, and floor-level motions. The figure
-              complements the quantitative evaluation; these examples are not a
-              separate success-rate estimate.
+              Qualitative comparison of G1 reference poses at matched
+              timestamps from eight human motions. The rows show source SMPL
+              poses and the corresponding references produced by GMR, NMR, and
+              SMR. Compared with GMR and NMR, SMR better preserves the source
+              whole-body posture, especially in the crouching, kneeling, and
+              floor-level examples.
             </figcaption>
           </figure>
           <div class="visual-grid">
@@ -475,7 +483,7 @@
       <section class="section" id="simulation">
         <div class="container">
           <p class="section-index">Motion reference comparisons</p>
-          <h2 class="title is-3">Human Motion → Robot References</h2>
+          <h2 class="title is-3">Human motion → robot references</h2>
           <p class="demo-intro section-intro">
             Four qualitative reference replays compare the source human motion
             with GMR, NMR, and SMR. These visualize the generated motion
@@ -574,7 +582,7 @@
       <section class="section" id="demos">
         <div class="container">
           <p class="section-index">Streaming / physical deployment</p>
-          <h2 class="title is-3">Streaming on a Physical G1</h2>
+          <h2 class="title is-3">Streaming on a physical G1</h2>
           <p class="demo-intro section-intro">
             Human motion is translated into robot references for execution
             through MimicLite. The recordings below compare GMR-driven and
@@ -608,7 +616,7 @@
                   <a href="static/videos/arms-gmr.mp4">Download video</a>
                 </video>
                 <figcaption>
-                  <p>Physical Unitree G1 · Independent recording</p>
+                  <p>Physical Unitree G1 · independent recording</p>
                 </figcaption>
               </figure>
               <figure class="demo-card">
@@ -625,7 +633,7 @@
                   <a href="static/videos/arms-smr.mp4">Download video</a>
                 </video>
                 <figcaption>
-                  <p>Physical Unitree G1 · Independent recording</p>
+                  <p>Physical Unitree G1 · independent recording</p>
                 </figcaption>
               </figure>
             </div>
@@ -653,7 +661,7 @@
                   <a href="static/videos/kneeling-gmr.mp4">Download video</a>
                 </video>
                 <figcaption>
-                  <p>Physical Unitree G1 · Independent recording</p>
+                  <p>Physical Unitree G1 · independent recording</p>
                 </figcaption>
               </figure>
               <figure class="demo-card">
@@ -670,7 +678,7 @@
                   <a href="static/videos/kneeling-smr.mp4">Download video</a>
                 </video>
                 <figcaption>
-                  <p>Physical Unitree G1 · Independent recording</p>
+                  <p>Physical Unitree G1 · independent recording</p>
                 </figcaption>
               </figure>
             </div>
@@ -698,7 +706,7 @@
                   <a href="static/videos/bag-gmr.mp4">Download video</a>
                 </video>
                 <figcaption>
-                  <p>Physical Unitree G1 · Independent recording</p>
+                  <p>Physical Unitree G1 · independent recording</p>
                 </figcaption>
               </figure>
               <figure class="demo-card">
@@ -715,7 +723,7 @@
                   <a href="static/videos/bag-smr.mp4">Download video</a>
                 </video>
                 <figcaption>
-                  <p>Physical Unitree G1 · Independent recording</p>
+                  <p>Physical Unitree G1 · independent recording</p>
                 </figcaption>
               </figure>
             </div>
@@ -739,7 +747,7 @@
                 </button>
               </div>
               <pre><code id="bibtex-code">@article{gu2026smr,
-  title         = {SMR: Learning Streaming Motion Retargeting for Humanoids from Human Semantic},
+  title         = {SMR: learning streaming motion retargeting for humanoids from human semantic},
   author        = {Gu, Chun and Zhang, Juntong and Li, Jingyu and Zhang, Li},
   journal       = {arXiv preprint},
   year          = {2026}
@@ -754,8 +762,8 @@
       <div class="container is-max-desktop">
         <div class="content has-text-centered">
           <p>
-            SMR: Learning Streaming Motion Retargeting for Humanoids from Human
-            Semantic.
+            SMR: learning streaming motion retargeting for humanoids from human
+            semantic.
           </p>
           <p>
             Page design inspired by the
