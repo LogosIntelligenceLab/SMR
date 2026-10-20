@@ -330,6 +330,10 @@ sup {
   font-size: 0.65em;
   margin-left: 2px;
 }
+.contribution-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
 .publication-links {
   display: flex;
   flex-wrap: wrap;

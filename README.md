@@ -3,7 +3,8 @@
 ### [[Project]](https://logosroboticsgroup.github.io/SMR/) [[BibTeX]](#bibtex)
 
 > [**SMR: Learning streaming motion retargeting for humanoids from human semantic**](https://logosroboticsgroup.github.io/SMR/)<br>
-> [Chun Gu](https://sulvxiangxin.github.io/), [Juntong Zhang](https://juntongz.github.io/), [Jingyu Li](https://sii-whaleice.github.io/), [Li Zhang](https://lzrobots.github.io/)
+> [Chun Gu](https://sulvxiangxin.github.io/), [Juntong Zhang](https://juntongz.github.io/), [Jingyu Li](https://sii-whaleice.github.io/), [Li Zhang](https://lzrobots.github.io/)<sup>*</sup><br>
+> <sup>*</sup>Corresponding author ([lizhangfd@fudan.edu.cn](mailto:lizhangfd@fudan.edu.cn)).
 
 **Official project page for "SMR: Learning streaming motion retargeting for humanoids from human semantic".**
 
