@@ -14,7 +14,7 @@
       semantic
     </title>
     <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg?v=2" />
-    <link rel="stylesheet" href="static/css/index.css" />
+    <link rel="stylesheet" href="static/css/index.css?v=ec8b7f526b" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -223,7 +223,7 @@
           </p>
           <p class="publication-authors contribution-note"><sup>*</sup>Corresponding author (<a href="mailto:lizhangfd@fudan.edu.cn">lizhangfd@fudan.edu.cn</a>).</p>
           <div class="publication-links">
-            <a class="button" href="paper.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a class="button" href="paper.pdf?v=3c107bc420" target="_blank" rel="noopener noreferrer">PDF</a>
             <button class="button" type="button" disabled aria-label="arXiv link not yet available">arXiv</button>
             <a class="button" href="https://github.com/LogosRoboticsGroup/SMR" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a class="button" href="#BibTeX">BibTeX</a>
@@ -236,7 +236,7 @@
           <div class="hero-body">
             <figure class="figure-frame figure-frame--hero">
               <img
-                src="static/images/pipeline.jpg?v=7d57718887"
+                src="static/images/pipeline.jpg?v=75e1b16de4"
                 alt="SMR pipeline: human motions are converted to robot-aware semantics, tracked by physics experts, and distilled into a causal retargeter"
                 fetchpriority="high"
               />
@@ -276,19 +276,23 @@
                 <p>
                   We propose <strong>SMR</strong>, a streaming neural motion
                   retargeter learned from semantic-conditioned physics experts.
-                  Human motion is converted into robot-aware task-space targets
+                  We convert human motion into robot-aware task-space targets
                   for body landmark positions, orientations, and velocities.
                   Physics experts track these targets directly in simulation
-                  under contact, dynamics, and actuator constraints. A single
-                  strictly causal Transformer learns from accepted executed
-                  state trajectories and generates a robot motion reference
-                  using only current and past human observations.
+                  under contact, dynamics, and actuator constraints. We train a
+                  single strictly causal Transformer on their executed state
+                  trajectories that complete the motion and pass semantic and
+                  physical validity checks. At each incoming frame, the student
+                  uses only current and past human observations to generate a
+                  robot motion reference for a downstream whole-body controller.
                 </p>
                 <p>
-                  In a shared Unitree G1 evaluation with a frozen whole-body
-                  controller, SMR improves closed-loop completion and tracking
-                  errors over kinematic and physics-refined baselines. We also
-                  show qualitative streaming teleoperation on a physical Unitree G1.
+                  Experiments demonstrate that semantic-conditioned physics
+                  experts generate motion with higher semantic fidelity and
+                  physical validity than direct optimization-based retargeting,
+                  while the resulting streaming retargeter achieves improved
+                  closed-loop performance over kinematic and physics-refined
+                  baselines under a common whole-body controller.
                 </p>
               </div>
             </div>
@@ -328,7 +332,7 @@
                   simulation. Contact, balance, and actuator constraints shape
                   the executed trajectory. Only expert rollouts that pass
                   semantic and physical validity checks become student
-                  supervision.
+                  supervision. IK is used only to initialize expert episodes.
                 </p>
                 <ul class="feature-list">
                   <li>
@@ -347,7 +351,7 @@
               </div>
               <figure class="figure-frame figure-frame--architecture">
                 <img
-                  src="static/images/pipeline.jpg?v=7d57718887"
+                  src="static/images/pipeline.jpg?v=75e1b16de4"
                   alt="Complete SMR training and deployment pipeline"
                   loading="lazy"
                 />
@@ -374,7 +378,7 @@
           </p>
           <div
             class="barchart"
-            aria-label="Motion completion: GMR 90 percent, NMR 92 percent, SMR 97 percent"
+            aria-label="Motion completion: GMR 90 percent, NMR 92 percent, GMR-supervised Student 91.5 percent, GMR-Expert Student 93 percent, SMR 97 percent"
           >
             <div class="bar-row">
               <span>GMR</span>
@@ -390,6 +394,20 @@
               </div>
               <strong>92%</strong>
             </div>
+            <div class="bar-row">
+              <span>GMR-supervised Student</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: 91.5%"></div>
+              </div>
+              <strong>91.5%</strong>
+            </div>
+            <div class="bar-row">
+              <span>GMR-Expert Student</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: 93%"></div>
+              </div>
+              <strong>93%</strong>
+            </div>
             <div class="bar-row highlight">
               <span>SMR (Ours)</span>
               <div class="bar-track">
@@ -401,7 +419,7 @@
           <div class="results-table-wrap">
             <table class="results-table">
               <caption>
-                Frozen-controller results on 400 test motions
+                Closed-loop evaluation on 400 motions using the same frozen whole-body controller. SMR achieves the highest success rate and lowest tracking and human-target errors, demonstrating more reliable execution and better preservation of human motion semantics.
               </caption>
               <thead>
                 <tr>
@@ -424,6 +442,18 @@
                   <td>0.057 m</td>
                   <td>0.111 m</td>
                 </tr>
+                <tr>
+                  <th scope="row">GMR-supervised Student</th>
+                  <td>91.5%</td>
+                  <td>0.055 m</td>
+                  <td>0.111 m</td>
+                </tr>
+                <tr>
+                  <th scope="row">GMR-Expert Student</th>
+                  <td>93.0%</td>
+                  <td>0.051 m</td>
+                  <td>0.112 m</td>
+                </tr>
                 <tr class="is-highlight">
                   <th scope="row">SMR (Ours)</th>
                   <td>97.0%</td>
@@ -433,6 +463,11 @@
               </tbody>
             </table>
           </div>
+          <p class="benchmark-copy">
+            MPJPE measures tracking error relative to the robot reference;
+            E-MPJPE measures executed wrist and ankle errors relative to the
+            human targets.
+          </p>
           <p class="benchmark-copy">
             At 50 Hz, the SMR model step takes 0.37 ms per frame, compared with
             4.87 ms for the warm-started GMR solve under the reported protocol.
@@ -466,7 +501,7 @@
                 alt="SMR data and model scaling curves"
                 loading="lazy"
               />
-              <figcaption>Data and model scaling.</figcaption>
+              <figcaption>Data and model scaling. Gains diminish beyond 50% training data, while the 12.7M model achieves the lowest held-out error.</figcaption>
             </figure>
             <figure class="figure-frame">
               <img
@@ -475,7 +510,7 @@
                 loading="lazy"
               />
               <figcaption>
-                Whole-body controller training on each reference distribution.
+                MimicLite training with different motion references. SMR achieves longer episodes and higher rewards by 4,000 iterations.
               </figcaption>
             </figure>
           </div>
@@ -689,7 +724,7 @@
             <header class="comparison-heading">
               <span class="demo-number">03</span>
               <div>
-                <h3>Motion with a hand-held bag</h3>
+                <h3>Additional demo: motion with a hand-held bag</h3>
                 <p>Upper-body motion while the robot holds a bag.</p>
               </div>
             </header>

@@ -466,7 +466,7 @@ sup {
 }
 .bar-row {
   display: grid;
-  grid-template-columns: 110px 1fr 50px;
+  grid-template-columns: 190px 1fr 50px;
   gap: 16px;
   align-items: center;
   font-size: 0.85rem;
@@ -671,9 +671,13 @@ code {
     font-size: 0.7rem;
   }
   .bar-row {
-    grid-template-columns: 80px 1fr 42px;
+    grid-template-columns: 110px 1fr 42px;
     gap: 9px;
     font-size: 0.75rem;
+  }
+  .results-table caption {
+    box-sizing: border-box;
+    width: calc(100vw - 42px);
   }
   .project-subtitle {
     font-size: 1.1rem;
