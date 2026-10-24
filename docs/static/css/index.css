@@ -937,9 +937,50 @@ code {
 .publication-hero {
   min-height: 100svh;
   display: grid;
-  grid-template-rows: minmax(48px, 1fr) auto minmax(210px, 1fr);
+  grid-template-rows: minmax(88px, 1fr) auto minmax(210px, 1fr);
   justify-content: stretch;
   text-align: center;
+}
+.hero-top {
+  position: absolute;
+  top: 26px;
+  left: 5%;
+  right: 5%;
+  text-align: left;
+}
+.lab-mark {
+  display: inline-block;
+  min-height: 44px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: 0.18em;
+}
+.lab-mark span {
+  display: block;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  line-height: 1.4;
+  opacity: 0.82;
+}
+.lab-mark:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+.lab-mark:focus-visible {
+  outline-color: #fff;
+}
+@media (max-width: 720px) {
+  .hero-top {
+    top: 22px;
+  }
+  .lab-mark {
+    font-size: 14px;
+  }
+  .lab-mark span {
+    font-size: 6px;
+  }
 }
 #top {
   scroll-margin-top: 0;
@@ -1014,7 +1055,7 @@ code {
 }
 @media (max-width: 540px) {
   .publication-hero {
-    grid-template-rows: minmax(32px, 1fr) auto minmax(210px, 1fr);
+    grid-template-rows: minmax(80px, 1fr) auto minmax(210px, 1fr);
   }
   .hero-status-detail {
     width: 100%;
